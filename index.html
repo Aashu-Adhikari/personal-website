@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashutosh Adhikari | ML Engineer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1>Ashutosh Adhikari</h1>
+                <h2>Machine Learning Engineer</h2>
+                <p class="profile-summary">Experienced ML Engineer adept at developing and implementing innovative machine learning solutions to tackle intricate challenges. Skilled in ML pipeline development with a collaborative mindset and a strong focus on achieving goals.</p>
+                <div class="header-actions">
+                    <a href="#projects" class="btn">View Projects</a>
+                    <a href="#contact" class="btn">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">AA</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">Professional Profile</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>I specialize in building machine learning solutions with expertise in NLP, computer vision, and data engineering. My work focuses on creating scalable ML pipelines and implementing cutting-edge AI research in production environments.</p>
+                    
+                    <div class="expertise-areas">
+                        <h3>Core Expertise:</h3>
+                        <ul>
+                            <li>AWS SageMaker for model training and inference</li>
+                            <li>ML pipeline development and optimization</li>
+                            <li>Natural Language Processing (NLP)</li>
+                            <li>Data visualization with React and Sigma.js</li>
+                            <li>Explainable AI (XAI) techniques</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section with Collapsible Items -->
+    <section id="experience" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-header" onclick="toggleCollapse('tai-engineer')">
+                        <h3>TAI Inc. <span class="timeline-date">Jan 2022 - Present</span></h3>
+                        <h4>ML Engineer <i class="fas fa-chevron-down collapse-icon"></i></h4>
+                    </div>
+                    <div id="tai-engineer" class="timeline-content collapsed">
+                        <ul>
+                            <li>Developed ML-based search application for Nomura Research Institute (Japan's top 10 fintech company)</li>
+                            <li>Collaborated with AMBL (AI Research Company in Japan) to deliver production-ready solutions</li>
+                            <li>Built common representation models for large Japanese datasets</li>
+                            <li>Implemented AWS SageMaker workflows for scalable model training and inference</li>
+                            <li>Created data visualization tools using React and Sigma.js for graph databases</li>
+                            <li>Researched and implemented XAI techniques for NLP model interpretability</li>
+                            <li>Mentored and guided interns in professional development</li>
+                        </ul>
+                        <div class="tech-tags">
+                            <span>Python</span>
+                            <span>AWS SageMaker</span>
+                            <span>PyTorch</span>
+                            <span>React</span>
+                            <span>Neo4j</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-header" onclick="toggleCollapse('tai-intern')">
+                        <h3>TAI Inc. <span class="timeline-date">Sep 2021 - Dec 2021</span></h3>
+                        <h4>ML Intern <i class="fas fa-chevron-down collapse-icon"></i></h4>
+                    </div>
+                    <div id="tai-intern" class="timeline-content collapsed">
+                        <ul>
+                            <li>Researched ML applications in music generation and synthesis</li>
+                            <li>Implemented state-of-the-art AI techniques for music projects</li>
+                        </ul>
+                        <div class="tech-tags">
+                            <span>Python</span>
+                            <span>Magenta.js</span>
+                            <span>TensorFlow</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-header" onclick="toggleCollapse('cloudfactory')">
+                        <h3>CloudFactory <span class="timeline-date">Jul 2020 - Aug 2021</span></h3>
+                        <h4>Annotation QA <i class="fas fa-chevron-down collapse-icon"></i></h4>
+                    </div>
+                    <div id="cloudfactory" class="timeline-content collapsed">
+                        <ul>
+                            <li>Ensured quality of annotated image data for ML datasets</li>
+                            <li>Developed validation processes for labeling accuracy</li>
+                        </ul>
+                        <div class="tech-tags">
+                            <span>Data Annotation</span>
+                            <span>Quality Assurance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                    <ul>
+                        <li>Python (Advanced)</li>
+                        <li>JavaScript (Intermediate)</li>
+                        <li>React (Intermediate)</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> Databases</h3>
+                    <ul>
+                        <li>MySQL</li>
+                        <li>Neo4j</li>
+                        <li>Elasticsearch</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-project-diagram"></i> ML Frameworks</h3>
+                    <ul>
+                        <li>PyTorch</li>
+                        <li>TensorFlow</li>
+                        <li>Scikit-learn</li>
+                        <li>SageMaker SDK</li>
+                        <li>Langchain</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-cogs"></i> Tools & Technologies</h3>
+                    <ul>
+                        <li>AWS SageMaker</li>
+                        <li>Docker</li>
+                        <li>Jenkins</li>
+                        <li>GitLab CI/CD</li>
+                        <li>Pandas</li>
+                        <li>Jupyter</li>
+                        <li>Sigma.js</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section with Collapsible Items -->
+    <section id="projects" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Aslead Search</h3>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>PyTorch</span>
+                            <span>NLP</span>
+                        </div>
+                    </div>
+                    <div id="aslead-search", class="project-content scrollable">
+                        <p>Code classification tool for technical documents achieving 95% accuracy with NLP models.</p>
+                        <ul>
+                            <li>Implemented Hugging Face transformer models for document classification</li>
+                            <li>Utilized XAI techniques for BERT model visualization</li>
+                            <li>Built training/inference pipeline with SageMaker SDK</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Relative Analyzer</h3>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Sigma.js</span>
+                            <span>Neo4j</span>
+                        </div>
+                    </div>
+                    <div id="relative-analyzer", class="project-content scrollable">
+                        <p>Web application for visualizing data stored in Neo4j graph databases.</p>
+                        <ul>
+                            <li>Optimized Neo4j queries (50x performance improvement)</li>
+                            <li>Integrated ElasticSearch for enhanced search capabilities</li>
+                            <li>Developed Docker-based deployment pipeline</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Melody Synthesis</h3>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Magenta.js</span>
+                            <span>TensorFlow</span>
+                        </div>
+                    </div>
+                    <div id="melody-synthesis", class="project-content scrollable">
+                        <p>ML-powered system for generating new musical melodies.</p>
+                        <ul>
+                            <li>Implemented state-of-the-art music generation models</li>
+                            <li>Developed user-friendly interface for music synthesis</li>
+                            <li>Integrated ML models with web application</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="education-card">
+                <h3>The British College</h3>
+                <p class="education-degree">Bachelor of Science in Information Technology (BSc IT)</p>
+                <p class="education-date">2017 - 2021</p>
+                
+                <div class="education-courses">
+                    <h4>Relevant Courses:</h4>
+                    <ul>
+                        <li>Data Structures</li>
+                        <li>Discrete Systems</li>
+                        <li>Cognitive Science</li>
+                        <li>Artificial Intelligence</li>
+                        <li>Database Administration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-dark">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>your.email@example.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+977 98XXXXXXX</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Kathmandu, Nepal</span>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+<!--                 
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 Ashutosh Adhikari. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
