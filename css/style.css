@@ -140,6 +140,7 @@ section {
 }
 
 .logo {
+    width: 50px;
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--primary);
@@ -239,10 +240,6 @@ section {
 
 .dp {
     height: 400px;
-}
-
-.logo {
-    width: 50px;
 }
 
 .image-placeholder {
