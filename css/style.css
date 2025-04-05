@@ -95,6 +95,8 @@ section {
 
 /* Header */
 .header {
+    position: relative;
+    overflow: hidden;
     padding: 120px 0 80px;
     background: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%);
     color: white;
@@ -138,6 +140,26 @@ section {
     justify-content: space-between;
     align-items: center;
 }
+
+/* Add to your CSS */
+#animated-name {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: 
+      typing 2s steps(20, end),
+      blink-caret 0.75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--primary); }
+  }
 
 .logo {
     width: 50px;
