@@ -144,6 +144,7 @@ section {
 /* Add to your CSS */
 #animated-name {
     overflow: hidden;
+    font-size:250%;
     white-space: nowrap;
     margin: 0 auto;
     animation: 
@@ -160,6 +161,7 @@ section {
     from, to { border-color: transparent }
     50% { border-color: var(--primary); }
   }
+  
 
 .logo {
     width: 50px;
