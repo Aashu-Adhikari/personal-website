@@ -76,6 +76,8 @@
     font-feature-settings: "ss01", "calt";
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    line-height: 1.65;
+    letter-spacing: -0.01em;
     background-image:
       radial-gradient(ellipse at 50% 0%, hsl(240 30% 12% / 0.5), transparent 70%),
       radial-gradient(ellipse at 50% 100%, hsl(240 30% 10% / 0.4), transparent 60%);
@@ -132,7 +134,7 @@
       opacity: 0.7; 
       box-shadow:
         inset 0 0 clamp(40px, 15vw, 240px) clamp(20px, 8vw, 80px) hsl(0 0% 0% / 0.8),
-        inset 0 0 clamp(40px, 15vw, 120px) clamp(10px, 5vw, 30px) hsl(var(--blood) / 0.25); /* Increase red glow in vignette */
+        inset 0 0 clamp(40px, 15vw, 120px) clamp(10px, 5vw, 30px) hsl(var(--blood) / 0.25);
     }
     body::after { opacity: 0.2; }
   }

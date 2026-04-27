@@ -17,7 +17,7 @@ export function TerminalWindow({
         </span>
         <span className="ml-2 text-dim truncate">{title}</span>
       </div>
-      <div className="p-4 sm:p-6 text-sm sm:text-[0.9rem]">{children}</div>
+      <div className="p-5 sm:p-8 text-base sm:text-[1.05rem] leading-relaxed">{children}</div>
     </div>
   );
 }

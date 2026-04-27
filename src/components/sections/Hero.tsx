@@ -19,13 +19,13 @@ export function Hero() {
       />
 
       <div className="container relative">
-        <div className="text-scrim max-w-3xl">
-          <div className="text-[0.65rem] sm:text-xs text-dim mb-4 flex items-center">
+        <div className="text-scrim max-w-4xl lg:max-w-5xl">
+          <div className="text-[0.7rem] sm:text-sm text-dim mb-4 flex items-center">
             <span className="inline-block w-2 h-2 bg-primary mr-2 align-middle animate-pulse shrink-0" />
             <span className="truncate">secure shell // session established // {new Date().toLocaleDateString()}</span>
           </div>
 
-          <div className="font-mono text-xs sm:text-base text-muted-foreground mb-8 sm:mb-10 max-w-2xl">
+          <div className="font-mono text-sm sm:text-lg text-muted-foreground mb-8 sm:mb-12 max-w-3xl">
             <Typewriter
               lines={[
                 { text: "ssh ashutosh@portfolio.local", prompt: "$" },
@@ -37,7 +37,7 @@ export function Hero() {
             />
           </div>
 
-          <h1 className="text-3xl sm:text-6xl lg:text-7xl font-mono font-medium tracking-tight text-bright leading-[1.1] sm:leading-[1.05]">
+          <h1 className="text-4xl sm:text-7xl lg:text-8xl font-mono font-medium tracking-tight text-bright leading-[1.05] sm:leading-[1.0]">
             <span
               className="glitch inline-block"
               data-text={profile.name}
@@ -48,33 +48,33 @@ export function Hero() {
             <span className="text-primary">.</span>
           </h1>
 
-          <p className="mt-4 text-base sm:text-xl text-foreground/90 font-mono">
+          <p className="mt-6 text-lg sm:text-2xl text-foreground/90 font-mono">
             <span className="text-primary">{">"}</span> {profile.role.toLowerCase()}
           </p>
 
-          <p className="mt-6 max-w-2xl text-sm sm:text-base text-foreground/85 leading-relaxed">
+          <p className="mt-8 max-w-3xl text-base sm:text-xl text-foreground/85 leading-relaxed">
             I build backend ML systems — FastAPI services, dockerized inference, LLM-powered search, and
             agentic execution platforms. Currently teaching browsers to think.
           </p>
         </div>
 
-        <div className="mt-10 flex flex-wrap items-center gap-3 sm:gap-4">
+        <div className="mt-12 flex flex-wrap items-center gap-4 sm:gap-6">
           <a
             href="#projects"
-            className="group inline-flex items-center gap-2 px-5 py-3 border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors font-mono text-sm w-full sm:w-auto justify-center"
+            className="group inline-flex items-center gap-2 px-6 py-4 border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors font-mono text-base w-full sm:w-auto justify-center"
           >
             view projects
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </a>
           <Link
             to="/resume"
-            className="inline-flex items-center gap-2 px-5 py-3 border border-border text-foreground hover:border-primary hover:text-primary transition-colors font-mono text-sm w-full sm:w-auto justify-center"
+            className="inline-flex items-center gap-2 px-6 py-4 border border-border text-foreground hover:border-primary hover:text-primary transition-colors font-mono text-base w-full sm:w-auto justify-center"
           >
-            <FileDown size={16} />
+            <FileDown size={18} />
             ~/resume
           </Link>
-          <div className="w-full sm:w-auto flex justify-center sm:justify-start mt-2 sm:mt-0">
-            <SocialRow className="ml-1" />
+          <div className="w-full sm:w-auto flex justify-center sm:justify-start mt-4 sm:mt-0">
+            <SocialRow size={18} className="ml-1" />
           </div>
         </div>
 
