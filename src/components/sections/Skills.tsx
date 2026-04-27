@@ -11,15 +11,23 @@ export function Skills() {
         <SectionHeader id="skills" prompt="ls -la ~/stack" title="stack" count={`// ${all.length} entries`} />
 
         <div ref={ref} className={`grid sm:grid-cols-2 lg:grid-cols-4 gap-4 ${inView ? "animate-fade-up" : "opacity-0"}`}>
-          {skills.map((s) => (
+          {skills.map((s, idx) => (
             <div key={s.category} className="terminal-frame p-4">
-              <div className="text-primary text-xs mb-3 font-mono">
-                <span className="text-dim">drwx</span> {s.category.toLowerCase().replace(/[^a-z]+/g, "-")}/
+              <div className="text-[0.65rem] text-primary/60 font-mono tracking-widest uppercase mb-3">
+                IDX-0{idx + 1} // {s.category.toUpperCase().replace(/[^A-Z]+/g, "_")}
               </div>
-              <ul className="space-y-1.5 text-sm">
+              <ul className="space-y-2 text-xs sm:text-sm">
                 {s.items.map((i) => (
-                  <li key={i} className="text-muted-foreground hover:text-foreground transition-colors">
-                    <span className="text-dim">›</span> {i}
+                  <li key={i} className="group">
+                    <div className="flex justify-between items-center mb-1">
+                      <span className="text-muted-foreground group-hover:text-primary transition-colors">{i}</span>
+                    </div>
+                    <div className="h-[2px] w-full bg-border/20 overflow-hidden">
+                      <div 
+                        className="h-full bg-primary/40 group-hover:bg-primary transition-all duration-500" 
+                        style={{ width: `${Math.floor(Math.random() * (95 - 70) + 70)}%` }} 
+                      />
+                    </div>
                   </li>
                 ))}
               </ul>

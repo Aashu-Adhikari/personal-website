@@ -25,7 +25,7 @@ function ExpItem({ e, defaultOpen }: { e: (typeof experience)[number]; defaultOp
   const { ref, inView } = useInView<HTMLDivElement>();
   return (
     <div ref={ref} className={inView ? "animate-fade-up" : "opacity-0"}>
-      <TerminalWindow title={`commit ${e.company.toLowerCase().replace(/[^a-z]+/g, "-")}`}>
+      <TerminalWindow title={`mission_log // ${e.company.toLowerCase().replace(/[^a-z]+/g, "_")}`}>
         <button onClick={() => setOpen((v) => !v)} className="w-full text-left group">
           <div className="flex items-start justify-between gap-4 flex-wrap">
             <div>
@@ -34,29 +34,34 @@ function ExpItem({ e, defaultOpen }: { e: (typeof experience)[number]; defaultOp
                   size={14}
                   className={`text-primary transition-transform ${open ? "rotate-90" : ""}`}
                 />
-                <h3 className="text-base sm:text-lg text-bright">{e.role}</h3>
+                <h3 className="text-sm sm:text-base text-bright font-mono uppercase tracking-tight">{e.role}</h3>
               </div>
-              <p className="text-sm text-muted-foreground mt-1 ml-5">
-                <span className="text-primary">@</span> {e.company}
+              <p className="text-xs text-muted-foreground mt-1 ml-5 font-mono uppercase tracking-widest opacity-60">
+                <span className="text-primary">@</span> {e.company} // COMPLETED_DEPLOYS
               </p>
             </div>
-            <span className="text-[0.7rem] sm:text-xs text-dim sm:ml-5 ml-5 mt-1 sm:mt-0">{e.period}</span>
+            <span className="text-[0.65rem] text-dim sm:ml-5 ml-5 mt-1 sm:mt-0 font-mono tracking-widest uppercase">{e.period}</span>
           </div>
         </button>
 
         {open && (
-          <ul className="mt-5 space-y-2 ml-2 sm:ml-5 border-l border-border pl-4 sm:pl-5">
-            {e.bullets.map((b, idx) => (
-              <li
-                key={idx}
-                className="text-sm text-muted-foreground leading-relaxed"
-                style={{ animation: `decrypt 0.5s ease-out ${idx * 50}ms both` }}
-              >
-                <span className="text-primary mr-2">›</span>
-                {b}
-              </li>
-            ))}
-          </ul>
+          <div className="mt-6 ml-2 sm:ml-5 space-y-4">
+            <div className="text-[0.6rem] text-primary/40 font-mono tracking-widest uppercase mb-2">
+              OPERATIONAL_HIGHLIGHTS
+            </div>
+            <ul className="space-y-3 border-l border-border/20 pl-4 sm:pl-5">
+              {e.bullets.map((b, idx) => (
+                <li
+                  key={idx}
+                  className="text-xs sm:text-sm text-muted-foreground leading-relaxed"
+                  style={{ animation: `decrypt 0.5s ease-out ${idx * 50}ms both` }}
+                >
+                  <span className="text-primary/60 mr-2">›</span>
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </div>
         )}
       </TerminalWindow>
     </div>

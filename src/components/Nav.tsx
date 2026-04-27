@@ -13,8 +13,15 @@ const items = [
 export function Nav() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<string>("");
+  const [scrolled, setScrolled] = useState(false);
   const { pathname } = useLocation();
   const onHome = pathname === "/";
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     if (!onHome) return;
@@ -45,14 +52,25 @@ export function Nav() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-md bg-background/70 border-b border-border">
-      <div className="container flex items-center justify-between h-14">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? "bg-background/80 backdrop-blur-md border-b border-border py-3" : "py-6"
+      }`}
+    >
+      {/* System Status Bar */}
+      <div className="absolute top-0 left-0 right-0 h-[3px] bg-primary/20 overflow-hidden">
+        <div className="h-full bg-primary animate-marquee" style={{ width: "20%", animationDuration: "15s" }} />
+      </div>
+      <div className="container flex items-center justify-between relative">
+        <div className="hidden lg:flex absolute left-0 -top-5 text-[0.55rem] text-primary/80 font-mono tracking-[0.2em] uppercase bg-background/40 backdrop-blur-sm px-2 py-0.5 border-x border-primary/20">
+          [USER: ASHURA | STATUS: AVAILABLE | SESSION: ROOT]
+        </div>
         <Link to="/" className="font-mono text-sm text-bright hover:text-primary transition-colors flex items-center">
           <span className="text-primary">~/</span>ashutosh.adhikari
           <span className="caret ml-1" aria-hidden />
         </Link>
 
-        <nav className="hidden md:flex items-center gap-5 text-xs font-mono">
+        <nav className="hidden md:flex items-center gap-6 text-sm font-mono">
           {onHome ? (
             items.map((i) => (
               <a
@@ -117,6 +135,6 @@ export function Nav() {
           </div>
         </div>
       )}
-    </header>
+    </nav>
   );
 }

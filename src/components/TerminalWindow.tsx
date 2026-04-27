@@ -15,9 +15,14 @@ export function TerminalWindow({
           <span className="w-2.5 h-2.5 rounded-full bg-muted-foreground/40" />
           <span className="w-2.5 h-2.5 rounded-full bg-primary/60" />
         </span>
-        <span className="ml-2 text-dim truncate">{title}</span>
+        <span 
+          className="ml-2 text-dim truncate" 
+          style={{ animation: "text-flicker 5s linear infinite" }}
+        >
+          {title}
+        </span>
       </div>
-      <div className="p-5 sm:p-8 text-base sm:text-[1.05rem] leading-relaxed">{children}</div>
+      <div className="p-5 sm:p-8 text-sm sm:text-base leading-relaxed">{children}</div>
     </div>
   );
 }

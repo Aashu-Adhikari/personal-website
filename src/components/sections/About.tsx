@@ -1,3 +1,4 @@
+import React from "react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { TerminalWindow } from "@/components/TerminalWindow";
 import { profile } from "@/data/portfolio";
@@ -11,25 +12,37 @@ export function About() {
         <SectionHeader id="about" prompt="cat ~/profile.md" title="about" />
         <div ref={ref} className={`grid lg:grid-cols-3 gap-6 ${inView ? "animate-fade-up" : "opacity-0"}`}>
           <div className="lg:col-span-2">
-            <TerminalWindow title="profile.md">
-              <p className="text-muted-foreground leading-relaxed">
-                <span className="text-primary">#</span> Ashutosh Adhikari
-              </p>
-              <p className="mt-4 text-foreground/90 leading-relaxed">{profile.summary}</p>
-              <p className="mt-6 text-dim text-xs">— eof —</p>
+            <TerminalWindow title="identity_matrix.prfl">
+              <div className="space-y-6">
+                <section>
+                  <div className="text-[0.65rem] text-primary/60 font-mono tracking-widest uppercase mb-2">
+                    IDX-P01 // BACKGROUND
+                  </div>
+                  <p className="text-foreground/90 leading-relaxed text-sm sm:text-base">
+                    {profile.summary}
+                  </p>
+                </section>
+                
+                <section className="pt-4 border-t border-border/10">
+                  <div className="text-[0.65rem] text-primary/60 font-mono tracking-widest uppercase mb-2">
+                    IDX-P02 // CORE_FOCUS
+                  </div>
+                  <p className="text-muted-foreground text-sm sm:text-base leading-relaxed italic">
+                    {profile.focus} — currently specialized in high-performance inference and agentic workflow orchestration.
+                  </p>
+                </section>
+              </div>
             </TerminalWindow>
           </div>
 
           <TerminalWindow title="sysinfo">
-            <dl className="space-y-3 text-sm">
-              <Row k="host" v="ashutosh.local" />
-              <Row k="location" v="Kathmandu, NP" />
-              <Row k="status" v={<span className="text-primary">{profile.status}</span>} />
-              <Row k="focus" v={profile.focus} />
-              <Row k="uptime" v="~4 yrs in prod" />
-              <Row k="lang" v="en / ne / ja" />
-              <Row k="shell" v="zsh — vim mode" />
-              <Row k="signal" v={<span className="text-primary">●</span>} />
+            <dl className="space-y-3 text-xs sm:text-sm">
+              <Row k="HOST" v="ashutosh.local" />
+              <Row k="LOC" v={profile.location.split(",").pop()?.trim() || "NP"} />
+              <Row k="STATUS" v={<span className="text-primary">{profile.status}</span>} />
+              <Row k="UPTIME" v="~4Y IN_PROD" />
+              <Row k="SHELL" v="zsh/vim" />
+              <Row k="SIGNAL" v={<span className="text-primary">● OK</span>} />
             </dl>
           </TerminalWindow>
         </div>

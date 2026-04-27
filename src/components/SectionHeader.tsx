@@ -1,4 +1,5 @@
 import { useInView } from "@/hooks/use-in-view";
+import { DecryptedText } from "./DecryptedText";
 
 export function SectionHeader({ id, prompt, title, count }: { id: string; prompt: string; title: string; count?: string }) {
   const { ref, inView } = useInView<HTMLDivElement>();
@@ -8,8 +9,8 @@ export function SectionHeader({ id, prompt, title, count }: { id: string; prompt
         <span className="text-primary text-sm">$</span>
         <span className="text-dim text-sm">{prompt}</span>
       </div>
-      <h2 className="mt-2 text-2xl sm:text-3xl font-mono font-medium text-bright tracking-tight">
-        {title}
+      <h2 className="mt-2 text-xl sm:text-2xl font-mono font-medium text-bright tracking-tight">
+        <DecryptedText text={title} />
         {count && <span className="ml-3 text-sm text-dim font-normal">{count}</span>}
       </h2>
       <div className="ascii-divider mt-3" />

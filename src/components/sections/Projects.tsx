@@ -28,7 +28,7 @@ function Card({ p, delay }: { p: (typeof projects)[number]; delay: number }) {
           <div className="flex items-start justify-between gap-3">
             <div>
               <div className="text-xs text-dim font-mono">~/projects/{p.slug}</div>
-              <h3 className="mt-2 text-xl text-bright group-hover:text-primary transition-colors">
+              <h3 className="mt-2 text-lg text-bright group-hover:text-primary transition-colors">
                 {p.name}
               </h3>
             </div>
@@ -42,15 +42,15 @@ function Card({ p, delay }: { p: (typeof projects)[number]; delay: number }) {
 
           <div className="mt-5 flex flex-wrap gap-1.5">
             {p.stack.map((s) => (
-              <span key={s} className="chip">
+              <span key={s} className="chip font-mono text-[0.6rem]">
                 {s}
               </span>
             ))}
           </div>
 
-          <div className="mt-5 pt-4 border-t border-border flex items-center justify-between text-xs">
-            <span className="text-dim">{p.role ?? "engineer"}</span>
-            <span className="text-primary opacity-0 group-hover:opacity-100 transition-opacity">open file →</span>
+          <div className="mt-6 pt-4 border-t border-border/10 flex items-center justify-between text-xs text-dim">
+            <span className="font-mono uppercase tracking-widest">{p.role || "Engineer"}</span>
+            <span className="text-primary group-hover:translate-x-1 transition-transform">{"->"}</span>
           </div>
         </article>
       </Link>

@@ -37,9 +37,9 @@ export function Hero() {
             />
           </div>
 
-          <h1 className="text-4xl sm:text-7xl lg:text-8xl font-mono font-medium tracking-tight text-bright leading-[1.05] sm:leading-[1.0]">
+          <h1 className="text-3xl sm:text-6xl lg:text-7xl font-mono font-medium tracking-tight text-bright leading-[1.05] sm:leading-[1.0]">
             <span
-              className="glitch inline-block"
+              className="glitch text-ghost inline-block"
               data-text={profile.name}
               style={{ animation: "hard-glitch 6s steps(2) infinite, rgb-split 3.5s ease-in-out infinite" }}
             >
@@ -48,14 +48,60 @@ export function Hero() {
             <span className="text-primary">.</span>
           </h1>
 
-          <p className="mt-6 text-lg sm:text-2xl text-foreground/90 font-mono">
+          <p className="mt-6 text-base sm:text-xl text-foreground/90 font-mono">
             <span className="text-primary">{">"}</span> {profile.role.toLowerCase()}
           </p>
 
-          <p className="mt-8 max-w-3xl text-base sm:text-xl text-foreground/85 leading-relaxed">
+          <p className="mt-8 max-w-3xl text-sm sm:text-lg text-foreground/85 leading-relaxed">
             I build backend ML systems — FastAPI services, dockerized inference, LLM-powered search, and
-            agentic execution platforms. Currently teaching browsers to think.
+            agentic execution platforms. <span className="redact hover:bg-transparent">They are watching.</span> Currently teaching browsers to think.
           </p>
+
+          <div className="mt-10 grid sm:grid-cols-2 gap-8 border-l border-border/30 pl-6 py-2">
+            <div>
+              <h3 className="text-[0.65rem] text-primary/60 font-mono tracking-widest uppercase mb-4">
+                Active Operations
+              </h3>
+              <ul className="space-y-3 font-mono text-sm">
+                <li className="flex items-start gap-3 group">
+                  <span className="text-primary mt-1">OPS_01</span>
+                  <div className="flex flex-col">
+                    <span className="flex items-center gap-2">
+                      [TABSENSE] — AI Browser Orchestration
+                      <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-primary/10 text-primary text-[0.55rem] font-bold animate-pulse">
+                        <span className="w-1 h-1 bg-primary rounded-full" />
+                        ACTIVE
+                      </span>
+                    </span>
+                    <span className="text-[0.65rem] text-dim group-hover:text-primary/60 transition-colors">Current Personal Project</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-primary mt-1">OPS_02</span>
+                  <span>[AGENTIC_QA] — Autonomous Execution Platform</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-[0.65rem] text-primary/60 font-mono tracking-widest uppercase mb-4">
+                System Stats
+              </h3>
+              <ul className="space-y-3 font-mono text-sm text-dim">
+                <li className="flex justify-between border-b border-border/10 pb-1">
+                  <span>EXPERIENCE</span>
+                  <span className="text-bright">4.5+ YEARS</span>
+                </li>
+                <li className="flex justify-between border-b border-border/10 pb-1">
+                  <span>STATUS</span>
+                  <span className="text-primary">AVAILABLE_FOR_OPS</span>
+                </li>
+                <li className="flex justify-between border-b border-border/10 pb-1">
+                  <span>AUTH</span>
+                  <span className="text-primary">LEVEL_ROOT</span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div className="mt-12 flex flex-wrap items-center gap-4 sm:gap-6">
@@ -78,9 +124,9 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="absolute bottom-4 left-0 right-0 hidden sm:flex justify-center">
+        {/* <div className="absolute bottom-4 left-0 right-0 hidden sm:flex justify-center">
           <div className="text-xs text-dim font-mono animate-pulse">↓ scroll</div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
