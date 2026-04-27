@@ -23,11 +23,11 @@ const ProjectDetail = () => {
   const next = projects[(idx + 1) % projects.length];
 
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative overflow-x-hidden">
       <HorrorBackground />
       <div className="grain" aria-hidden />
       <Nav />
-      <main className="container py-16 max-w-4xl">
+      <main className="container py-12 sm:py-16 max-w-4xl relative z-10">
         <Link to="/#projects" className="inline-flex items-center gap-2 text-xs text-muted-foreground hover:text-primary transition-colors mb-6">
           <ArrowLeft size={14} /> back to projects
         </Link>
@@ -40,9 +40,9 @@ const ProjectDetail = () => {
           {p.name}
           <span className="caret" aria-hidden />
         </h1>
-        <p className="mt-3 text-muted-foreground">{p.tagline}</p>
+        <p className="mt-3 text-sm sm:text-base text-muted-foreground">{p.tagline}</p>
 
-        <div className="mt-5 flex flex-wrap items-center gap-2 text-xs">
+        <div className="mt-5 flex flex-wrap items-center gap-2 text-[0.7rem] sm:text-xs">
           {p.role && <span className="chip-accent">{p.role}</span>}
           {p.timeframe && <span className="chip">{p.timeframe}</span>}
           {p.stack.map((s) => (
@@ -63,17 +63,17 @@ const ProjectDetail = () => {
           </a>
         )}
 
-        <div className="ascii-divider my-10 select-none">─────────────────────────────────────────────────</div>
+        <div className="ascii-divider my-10" />
 
         <section className="space-y-10">
           <Block title="problem">
-            <p className="text-foreground/90 leading-relaxed">{p.problem}</p>
+            <p className="text-foreground/90 text-sm sm:text-base leading-relaxed">{p.problem}</p>
           </Block>
 
           <Block title="approach">
             <ul className="space-y-2">
               {p.approach.map((a, i) => (
-                <li key={i} className="text-foreground/90 leading-relaxed">
+                <li key={i} className="text-foreground/90 text-sm sm:text-base leading-relaxed">
                   <span className="text-primary mr-2">›</span>
                   {a}
                 </li>
@@ -85,7 +85,7 @@ const ProjectDetail = () => {
             <Block title="outcomes">
               <ul className="space-y-2">
                 {p.outcomes.map((o, i) => (
-                  <li key={i} className="text-foreground/90 leading-relaxed">
+                  <li key={i} className="text-foreground/90 text-sm sm:text-base leading-relaxed">
                     <span className="text-primary mr-2">✓</span>
                     {o}
                   </li>
@@ -95,7 +95,7 @@ const ProjectDetail = () => {
           )}
         </section>
 
-        <div className="mt-16 grid sm:grid-cols-2 gap-4">
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 gap-4">
           <NavCard label="prev" project={prev} dir="left" />
           <NavCard label="next" project={next} dir="right" />
         </div>
@@ -120,16 +120,16 @@ function NavCard({ label, project, dir }: { label: string; project: (typeof proj
   return (
     <Link
       to={`/projects/${project.slug}`}
-      className={`terminal-frame scan-sweep p-4 group flex items-center gap-3 ${dir === "right" ? "sm:flex-row-reverse text-right" : ""}`}
+      className={`terminal-frame scan-sweep p-4 group flex items-center gap-3 ${dir === "right" ? "sm:flex-row-reverse sm:text-right" : ""}`}
     >
       {dir === "left" ? (
         <ArrowLeft size={16} className="text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
       ) : (
-        <ArrowRight size={16} className="text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
+        <ArrowRight size={16} className="text-muted-foreground group-hover:text-primary transition-colors shrink-0 sm:order-last" />
       )}
-      <div>
+      <div className="flex-1 min-w-0 text-left">
         <div className="text-xs text-dim">{label}</div>
-        <div className="text-sm text-bright group-hover:text-primary transition-colors">{project.name}</div>
+        <div className="text-sm text-bright group-hover:text-primary transition-colors truncate">{project.name}</div>
       </div>
     </Link>
   );

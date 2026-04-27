@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[92vh] flex items-center pt-16 pb-20">
+    <section className="relative min-h-[92vh] flex items-center pt-20 pb-20">
       {/* faint heartbeat gradient */}
       <div
         aria-hidden
@@ -20,12 +20,12 @@ export function Hero() {
 
       <div className="container relative">
         <div className="text-scrim max-w-3xl">
-          <div className="text-xs text-dim mb-4">
-            <span className="inline-block w-2 h-2 bg-primary mr-2 align-middle animate-pulse" />
-            secure shell // session established // {new Date().toUTCString()}
+          <div className="text-[0.65rem] sm:text-xs text-dim mb-4 flex items-center">
+            <span className="inline-block w-2 h-2 bg-primary mr-2 align-middle animate-pulse shrink-0" />
+            <span className="truncate">secure shell // session established // {new Date().toLocaleDateString()}</span>
           </div>
 
-          <div className="font-mono text-sm sm:text-base text-muted-foreground mb-10 max-w-2xl">
+          <div className="font-mono text-xs sm:text-base text-muted-foreground mb-8 sm:mb-10 max-w-2xl">
             <Typewriter
               lines={[
                 { text: "ssh ashutosh@portfolio.local", prompt: "$" },
@@ -37,7 +37,7 @@ export function Hero() {
             />
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-mono font-medium tracking-tight text-bright leading-[1.05]">
+          <h1 className="text-3xl sm:text-6xl lg:text-7xl font-mono font-medium tracking-tight text-bright leading-[1.1] sm:leading-[1.05]">
             <span
               className="glitch inline-block"
               data-text={profile.name}
@@ -48,7 +48,7 @@ export function Hero() {
             <span className="text-primary">.</span>
           </h1>
 
-          <p className="mt-4 text-lg sm:text-xl text-foreground/90 font-mono">
+          <p className="mt-4 text-base sm:text-xl text-foreground/90 font-mono">
             <span className="text-primary">{">"}</span> {profile.role.toLowerCase()}
           </p>
 
@@ -58,22 +58,24 @@ export function Hero() {
           </p>
         </div>
 
-        <div className="mt-10 flex flex-wrap items-center gap-4">
+        <div className="mt-10 flex flex-wrap items-center gap-3 sm:gap-4">
           <a
             href="#projects"
-            className="group inline-flex items-center gap-2 px-5 py-3 border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors font-mono text-sm"
+            className="group inline-flex items-center gap-2 px-5 py-3 border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors font-mono text-sm w-full sm:w-auto justify-center"
           >
             view projects
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </a>
           <Link
             to="/resume"
-            className="inline-flex items-center gap-2 px-5 py-3 border border-border text-foreground hover:border-primary hover:text-primary transition-colors font-mono text-sm"
+            className="inline-flex items-center gap-2 px-5 py-3 border border-border text-foreground hover:border-primary hover:text-primary transition-colors font-mono text-sm w-full sm:w-auto justify-center"
           >
             <FileDown size={16} />
             ~/resume
           </Link>
-          <SocialRow className="ml-1" />
+          <div className="w-full sm:w-auto flex justify-center sm:justify-start mt-2 sm:mt-0">
+            <SocialRow className="ml-1" />
+          </div>
         </div>
 
         <div className="absolute bottom-4 left-0 right-0 hidden sm:flex justify-center">

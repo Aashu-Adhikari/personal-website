@@ -11,11 +11,11 @@ import { Contact } from "@/components/sections/Contact";
 
 const Index = () => {
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative overflow-x-hidden">
       <HorrorBackground />
       <div className="grain" aria-hidden />
       <Nav />
-      <main>
+      <main className="relative z-10">
         <Hero />
         <About />
         <Skills />

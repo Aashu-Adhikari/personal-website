@@ -12,9 +12,7 @@ export function SectionHeader({ id, prompt, title, count }: { id: string; prompt
         {title}
         {count && <span className="ml-3 text-sm text-dim font-normal">{count}</span>}
       </h2>
-      <div className="ascii-divider mt-3 select-none">
-        ─────────────────────────────────────────────────
-      </div>
+      <div className="ascii-divider mt-3" />
     </div>
   );
 }

@@ -40,12 +40,12 @@ function ExpItem({ e, defaultOpen }: { e: (typeof experience)[number]; defaultOp
                 <span className="text-primary">@</span> {e.company}
               </p>
             </div>
-            <span className="text-xs text-dim ml-5">{e.period}</span>
+            <span className="text-[0.7rem] sm:text-xs text-dim sm:ml-5 ml-5 mt-1 sm:mt-0">{e.period}</span>
           </div>
         </button>
 
         {open && (
-          <ul className="mt-5 space-y-2 ml-5 border-l border-border pl-5">
+          <ul className="mt-5 space-y-2 ml-2 sm:ml-5 border-l border-border pl-4 sm:pl-5">
             {e.bullets.map((b, idx) => (
               <li
                 key={idx}
