@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
 const items = [
   { label: "~/about", href: "#about" },
@@ -90,15 +91,19 @@ export function Nav() {
           <Link to="/resume" className="text-muted-foreground hover:text-primary transition-colors border border-border px-2 py-1">
             ~/resume
           </Link>
+          {onHome && <ThemeSwitcher />}
         </nav>
 
-        <button
+        <div className="md:hidden flex items-center gap-4">
+          {onHome && <ThemeSwitcher />}
+          <button
           className="md:hidden flex items-center justify-center w-10 h-10 font-mono text-muted-foreground border border-border rounded-sm hover:text-primary transition-colors"
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
         >
           {open ? "[x]" : "[≡]"}
         </button>
+        </div>
       </div>
 
       {open && (

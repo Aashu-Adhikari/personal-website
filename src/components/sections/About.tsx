@@ -31,6 +31,22 @@ export function About() {
                     {profile.focus} — currently specialized in high-performance inference and agentic workflow orchestration.
                   </p>
                 </section>
+                
+                {profile.openTo && (
+                  <section className="pt-4 border-t border-border/10">
+                    <div className="text-[0.65rem] text-primary/60 font-mono tracking-widest uppercase mb-4">
+                      IDX-P03 // OPEN_TO
+                    </div>
+                    <ul className="space-y-2">
+                      {profile.openTo.map((item, idx) => (
+                        <li key={idx} className="flex items-start gap-3 text-sm sm:text-base text-foreground/80">
+                          <span className="text-primary/70 shrink-0 mt-1.5 text-[8px]">■</span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                )}
               </div>
             </TerminalWindow>
           </div>
