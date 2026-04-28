@@ -1,4 +1,6 @@
 import { Nav } from "@/components/Nav";
+import { useTheme } from "@/contexts/ThemeContext";
+import ProfessionalIndex from "./ProfessionalIndex";
 import { Footer } from "@/components/Footer";
 import { HorrorBackground } from "@/components/HorrorBackground";
 import { Hero } from "@/components/sections/Hero";
@@ -10,6 +12,12 @@ import { Blogs } from "@/components/sections/Logs";
 import { Contact } from "@/components/sections/Contact";
 
 const Index = () => {
+  const { theme } = useTheme();
+
+  if (theme === "professional") {
+    return <ProfessionalIndex />;
+  }
+
   return (
     <div className="min-h-screen relative overflow-x-hidden">
       <HorrorBackground />

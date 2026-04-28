@@ -17,7 +17,7 @@ export const projects: Project[] = [
     slug: "agentic-qa",
     name: "Agentic QA",
     tagline: "Backend-driven platform orchestrating automated browser workflows.",
-    stack: ["Python", "FastAPI", "Docker", "Playwright", "AWS", "VNC"],
+    stack: ["FastAPI", "Docker", "Playwright", "AWS"],
     timeframe: "2025 — present",
     role: "Backend / ML Engineer",
     problem:
@@ -38,7 +38,7 @@ export const projects: Project[] = [
     slug: "tabsense",
     name: "TabSense — AI Browser Assistant",
     tagline: "Privacy-focused Chrome extension for AI-powered tab management and research.",
-    stack: ["React", "TensorFlow.js", "Chrome MV3", "RAG", "Webpack"],
+    stack: ["React", "TensorFlow.js", "RAG", "Chrome MV3"],
     role: "Creator",
     link: {
       label: "Chrome Web Store",
@@ -107,7 +107,7 @@ export const projects: Project[] = [
     slug: "visa-processing",
     name: "Visa Processing System",
     tagline: "End-to-end visa application processing with dynamic forms and secure storage.",
-    stack: ["Python", "FastAPI", "SurveyJS", "MongoDB", "AWS S3"],
+    stack: ["FastAPI", "MongoDB", "AWS S3"],
     role: "Backend Engineer",
     problem:
       "Visa workflows change constantly across countries and categories. The system needed dynamic forms, validation, secure document handling, and an admin pipeline.",
@@ -123,7 +123,7 @@ export const projects: Project[] = [
     slug: "aslead-search",
     name: "Aslead Search",
     tagline: "ML-powered enterprise search built for Nomura Research Institute.",
-    stack: ["Python", "FastAPI", "PyTorch", "AWS SageMaker", "LLMs", "XAI"],
+    stack: ["FastAPI", "PyTorch", "AWS SageMaker", "LLMs"],
     role: "ML Engineer",
     problem:
       "NRI required a semantic search system over a large corpus of Japanese technical documents — with classification, similarity, and explainability.",
@@ -140,7 +140,7 @@ export const projects: Project[] = [
     slug: "relative-analyzer",
     name: "Relative Analyzer",
     tagline: "Web app for visualizing graph data stored in Neo4j.",
-    stack: ["React", "Sigma.js", "Neo4j", "Docker", "Elasticsearch"],
+    stack: ["React", "Neo4j", "Docker", "Elasticsearch"],
     role: "Full-stack Engineer",
     problem:
       "Relationship-heavy datasets are hard to read in tables. The team needed an interactive graph view with sub-second query performance.",
@@ -155,7 +155,7 @@ export const projects: Project[] = [
     slug: "melody-synthesis",
     name: "Melody Synthesis",
     tagline: "Prototype system for music synthesis using machine learning.",
-    stack: ["Python", "Magenta.js", "TensorFlow"],
+    stack: ["TensorFlow", "Python"],
     role: "Research Intern",
     problem: "Explore how generative ML models can synthesize new melodies and how to expose that to non-technical users.",
     approach: [
@@ -182,6 +182,13 @@ export const profile = {
   },
   summary:
     "Backend-focused Machine Learning Engineer with extensive experience designing, building, and deploying production-grade ML systems and APIs. Specialized in FastAPI-based backend services, Dockerized microservices, and scalable cloud deployments on AWS. Proficient in NLP, LLM-powered search systems, and enterprise data platforms with a strong emphasis on reliability, performance, and maintainability. Currently developing agentic execution platforms with browser automation and workflow orchestration.",
+  openTo: [
+    "Building Agentic & AI Systems",
+    "Backend & ML Infrastructure Consulting",
+    "Research collaborations in NLP / Search",
+    "Open source contributions",
+    "Model training and fine-tuning"
+  ]
 };
 
 export const experience = [
@@ -224,7 +231,7 @@ export const experience = [
 
 export const skills: { category: string; items: string[] }[] = [
   { category: "Backend & APIs", items: ["FastAPI", "Flask", "REST APIs", "Async Python"] },
-  { category: "Languages", items: ["Python", "JavaScript", "SQL", "Java"] },
+  { category: "Languages", items: ["Python", "JavaScript", "TypeScript", "SQL"] },
   { category: "ML & NLP", items: ["PyTorch", "TensorFlow", "Scikit-learn", "Hugging Face Transformers", "LLMs", "LangChain", "FAISS", "XAI"] },
   { category: "Cloud & DevOps", items: ["AWS SageMaker", "EC2", "S3", "ECR", "IAM", "CloudWatch", "Docker"] },
   { category: "Databases & Search", items: ["Neo4j", "Elasticsearch", "MongoDB", "PostgreSQL"] },

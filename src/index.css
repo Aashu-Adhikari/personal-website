@@ -70,7 +70,7 @@
     scroll-behavior: smooth;
   }
 
-  body {
+  html:not(.theme-professional) body {
     @apply bg-background text-foreground;
     font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
     font-feature-settings: "ss01", "calt";
@@ -84,13 +84,19 @@
     background-attachment: fixed;
   }
 
+  html.theme-professional body {
+    @apply bg-slate-50 text-slate-900;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
   ::selection {
     background: hsl(var(--primary) / 0.35);
     color: hsl(var(--terminal-bright));
   }
 
   /* Vignette — responsive intensity */
-  body::before {
+  html:not(.theme-professional) body::before {
     content: "";
     position: fixed;
     inset: 0;
@@ -104,7 +110,7 @@
   }
 
   /* Scanlines — responsive opacity */
-  body::after {
+  html:not(.theme-professional) body::after {
     content: "";
     position: fixed;
     inset: 0;
@@ -123,20 +129,20 @@
   }
 
   @media (max-width: 640px) {
-    body {
+    html:not(.theme-professional) body {
       /* Add a subtle red-navy tint to the overall background on mobile */
       background-color: hsl(240 25% 6%);
       background-image:
         radial-gradient(ellipse at 50% 0%, hsl(0 60% 10% / 0.4), transparent 70%),
         radial-gradient(ellipse at 50% 100%, hsl(350 60% 10% / 0.3), transparent 60%);
     }
-    body::before { 
+    html:not(.theme-professional) body::before { 
       opacity: 0.7; 
       box-shadow:
         inset 0 0 clamp(40px, 15vw, 240px) clamp(20px, 8vw, 80px) hsl(0 0% 0% / 0.8),
         inset 0 0 clamp(40px, 15vw, 120px) clamp(10px, 5vw, 30px) hsl(var(--blood) / 0.25);
     }
-    body::after { opacity: 0.2; }
+    html:not(.theme-professional) body::after { opacity: 0.2; }
   }
 }
 
