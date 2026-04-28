@@ -367,19 +367,27 @@
   50% { transform: translate(0, 0); }
 }
 @keyframes hard-glitch {
-  0%, 92%, 100% { transform: translate(0,0); filter: none; }
-  93% { transform: translate(-3px, 1px); filter: hue-rotate(-20deg) saturate(1.4); }
-  94% { transform: translate(3px, -1px); filter: hue-rotate(20deg) saturate(1.6); }
-  95% { transform: translate(-2px, 2px); filter: none; }
-  96% { transform: translate(2px, 0); filter: hue-rotate(-10deg); }
-  97% { transform: translate(0,0); filter: none; }
+  0%, 20%, 40%, 60%, 70%, 90% { transform: translate(0,0) skew(0); filter: none; }
+  21% { transform: translate(-5px, 2px) skew(5deg); filter: hue-rotate(-90deg) saturate(2); }
+  22% { transform: translate(5px, -2px) skew(-5deg); filter: hue-rotate(90deg) contrast(1.5); }
+  23% { transform: translate(0,0) skew(0); filter: none; }
+  61% { transform: translate(-3px, -3px); filter: brightness(1.5) contrast(1.2); }
+  62% { transform: translate(3px, 3px); filter: none; }
+  91% { transform: translate(-10px, 1px) skew(10deg); filter: invert(0.1) sepia(1) saturate(5) hue-rotate(290deg); }
+  92% { transform: translate(10px, -1px) skew(-10deg); filter: none; }
+  93% { transform: translate(-2px, 5px); filter: hue-rotate(-20deg) saturate(1.4); }
+  94% { transform: translate(2px, -5px); filter: hue-rotate(20deg) saturate(1.6); }
+  95% { transform: translate(-8px, 2px) skew(5deg); filter: none; }
+  96% { transform: translate(8px, 0) skew(-5deg); filter: hue-rotate(-10deg); }
+  97% { transform: translate(0,0) skew(0); filter: none; }
 }
 @keyframes rgb-split {
   0%, 100% { text-shadow: none; }
   50% {
     text-shadow:
-      -2px 0 hsl(var(--gore) / 0.8),
-      2px 0 hsl(var(--blood) / 0.5);
+      -3px 0 hsl(var(--gore) / 0.9),
+      3px 0 hsl(var(--blood) / 0.7),
+      0 1px hsl(var(--primary) / 0.3);
   }
 }
 

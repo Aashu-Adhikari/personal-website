@@ -41,7 +41,7 @@ export function Hero() {
             <span
               className="glitch text-ghost inline-block"
               data-text={profile.name}
-              style={{ animation: "hard-glitch 6s steps(2) infinite, rgb-split 3.5s ease-in-out infinite" }}
+              style={{ animation: "hard-glitch 4s steps(1) infinite, rgb-split 2.5s ease-in-out infinite, text-flicker 3s linear infinite" }}
             >
               {profile.name}
             </span>

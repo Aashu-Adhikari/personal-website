@@ -3,9 +3,22 @@ import { Footer } from "@/components/Footer";
 import { HorrorBackground } from "@/components/HorrorBackground";
 import { TerminalWindow } from "@/components/TerminalWindow";
 import { projects } from "@/data/portfolio";
-import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
+import { 
+  ArrowLeft, 
+  ArrowRight, 
+  ExternalLink, 
+  Brain, 
+  Layers, 
+  Search, 
+  MessageSquare, 
+  BarChart3, 
+  Layout, 
+  RotateCcw, 
+  Cpu,
+  ChevronDown 
+} from "lucide-react";
 import { Link, Navigate, useParams } from "react-router-dom";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -81,6 +94,16 @@ const ProjectDetail = () => {
             </ul>
           </Block>
 
+          {p.features && (
+            <Block title="system_capabilities">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {p.features.map((f, i) => (
+                  <FeatureCard key={i} f={f} />
+                ))}
+              </div>
+            </Block>
+          )}
+
           {p.outcomes && (
             <Block title="outcomes">
               <ul className="space-y-4">
@@ -104,6 +127,64 @@ const ProjectDetail = () => {
     </div>
   );
 };
+
+function FeatureCard({ f }: { f: { category: string; items: string[] } }) {
+  const [isOpen, setIsOpen] = useState(false);
+  
+  const Icon = {
+    "AI-Powered Organization": Brain,
+    "Intelligent Grouping": Layers,
+    "Advanced Search": Search,
+    "Chat with Tabs": MessageSquare,
+    "Advanced Analytics": BarChart3,
+    "Dual Interface": Layout,
+    "Undo/Redo": RotateCcw,
+  }[f.category] || Cpu;
+
+  return (
+    <div className={`group relative border border-border/40 bg-secondary/10 transition-all duration-300 ${isOpen ? 'border-primary/40 ring-1 ring-primary/10' : 'hover:border-primary/20'}`}>
+      <button 
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex items-center gap-4 p-5 text-left"
+      >
+        <div className={`p-2.5 bg-primary/5 border transition-colors ${isOpen ? 'border-primary/60 bg-primary/10 text-primary' : 'border-primary/20 text-primary/60 group-hover:text-primary group-hover:border-primary/40'}`}>
+          <Icon size={20} />
+        </div>
+        <div className="flex-1 flex items-center justify-between gap-2">
+          <h4 className="text-xs sm:text-sm text-bright font-mono font-bold tracking-tight uppercase">
+            {f.category}
+          </h4>
+          <div className="flex items-center gap-3">
+            <span className={`text-[0.6rem] font-mono px-1.5 py-0.5 border uppercase hidden sm:block transition-colors ${isOpen ? 'border-primary/30 bg-primary/10 text-primary' : 'border-primary/10 bg-primary/5 text-primary/40'}`}>
+              {isOpen ? 'status_expanded' : 'status_idle'}
+            </span>
+            <ChevronDown size={14} className={`text-primary/40 transition-transform duration-300 ${isOpen ? 'rotate-180 text-primary' : 'group-hover:text-primary/60'}`} />
+          </div>
+        </div>
+      </button>
+      
+      <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[500px] opacity-100 pb-5 px-5' : 'max-h-0 opacity-0'}`}>
+        <div className="pt-2 border-t border-border/10">
+          <ul className="space-y-2.5 mt-4">
+            {f.items.map((item, itemIdx) => (
+              <li key={itemIdx} className="text-[0.75rem] sm:text-[0.85rem] text-muted-foreground leading-relaxed flex items-start gap-2.5 group/item">
+                <span className="text-primary mt-1.5 opacity-40 group-hover/item:opacity-100 transition-opacity">
+                  {">"}
+                </span>
+                <span className="group-hover/item:text-foreground transition-colors">
+                  {item}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {/* Decorative corner */}
+      <div className={`absolute -top-px -right-px w-2 h-2 border-t border-r border-primary/40 transition-opacity ${isOpen ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`} />
+    </div>
+  );
+}
 
 function Block({ title, children }: { title: string; children: React.ReactNode }) {
   return (

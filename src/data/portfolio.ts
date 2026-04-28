@@ -8,6 +8,7 @@ export type Project = {
   link?: { label: string; url: string };
   problem: string;
   approach: string[];
+  features?: { category: string; items: string[] }[];
   outcomes?: string[];
 };
 
@@ -50,6 +51,55 @@ export const projects: Project[] = [
       "Implemented on-device ML using TensorFlow.js (Universal Sentence Encoder) to classify and group tabs.",
       "Designed an adaptive online learning system that incrementally retrains the local model from manual grouping actions.",
       "Integrated streaming LLM APIs (OpenAI, OpenRouter) with real-time token streaming and Markdown rendering.",
+    ],
+    features: [
+      {
+        category: "AI-Powered Organization",
+        items: [
+          "Smart Classification: 10 predefined categories using TensorFlow.js",
+          "Auto-Learning: Local model improves from manual tab assignments",
+          "Fallback System: Rule-based classification when ML is unavailable"
+        ]
+      },
+      {
+        category: "Intelligent Grouping",
+        items: [
+          "Domain Grouping: Automatic organization by website domain",
+          "Pattern-based Content Grouping",
+          "Custom Emojis: Personalize domain group names and icons"
+        ]
+      },
+      {
+        category: "Advanced Search",
+        items: [
+          "Real-time search across titles and URLs",
+          "Highlighted matching terms with instant results"
+        ]
+      },
+      {
+        category: "Chat with Tabs",
+        items: [
+          "Ask questions about webpage content using RAG",
+          "Streaming LLM responses with source citations",
+          "Support for OpenRouter, OpenAI, and custom providers"
+        ]
+      },
+      {
+        category: "Advanced Analytics",
+        items: [
+          "Time Tracking: Active browsing time per domain",
+          "Memory Estimation: Heuristic RAM consumption tracking",
+          "Focus Score: Productive vs. distracting time classification",
+          "Historical Habbit Visualization (7-day period)"
+        ]
+      },
+      {
+        category: "Dual Interface",
+        items: [
+          "Popup View for quick access",
+          "Side Panel for deep research and persistent chat"
+        ]
+      }
     ],
     outcomes: ["Published on the Chrome Web Store.", "All tab embeddings stay on-device."],
   },
