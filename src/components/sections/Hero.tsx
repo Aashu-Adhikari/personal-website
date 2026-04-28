@@ -19,13 +19,13 @@ export function Hero() {
       />
 
       <div className="container relative">
-        <div className="text-scrim max-w-4xl lg:max-w-5xl">
+        <div className="text-scrim max-w-2xl lg:max-w-3xl">
           <div className="text-[0.7rem] sm:text-sm text-dim mb-4 flex items-center">
             <span className="inline-block w-2 h-2 bg-primary mr-2 align-middle animate-pulse shrink-0" />
             <span className="truncate">secure shell // session established // {new Date().toLocaleDateString()}</span>
           </div>
 
-          <div className="font-mono text-sm sm:text-lg text-muted-foreground mb-8 sm:mb-12 max-w-3xl">
+          <div className="font-mono text-sm sm:text-lg text-muted-foreground mb-8 sm:mb-12 max-w-2xl">
             <Typewriter
               lines={[
                 { text: "ssh ashutosh@portfolio.local", prompt: "$" },
@@ -52,55 +52,53 @@ export function Hero() {
             <span className="text-primary">{">"}</span> {profile.role.toLowerCase()}
           </p>
 
-          <p className="mt-8 max-w-3xl text-sm sm:text-lg text-foreground/85 leading-relaxed">
+          <p className="mt-8 max-w-2xl text-sm sm:text-lg text-foreground/85 leading-relaxed">
             I build backend ML systems — FastAPI services, dockerized inference, LLM-powered search, and
-            agentic execution platforms. <span className="redact hover:bg-transparent">They are watching.</span> Currently teaching browsers to think.
+            agentic execution platforms. <span className="redact hover:bg-transparent">Inference is inevitable.</span> Currently teaching browsers to think.
           </p>
+        </div>
 
-          <div className="mt-10 grid sm:grid-cols-2 gap-8 border-l border-border/30 pl-6 py-2">
-            <div>
-              <h3 className="text-[0.65rem] text-primary/60 font-mono tracking-widest uppercase mb-4">
-                Active Operations
-              </h3>
-              <ul className="space-y-3 font-mono text-sm">
-                <li className="flex items-start gap-3 group">
-                  <span className="text-primary mt-1">OPS_01</span>
-                  <div className="flex flex-col">
-                    <span className="flex items-center gap-2">
-                      [TABSENSE] — AI Browser Orchestration
-                      <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-primary/10 text-primary text-[0.55rem] font-bold animate-pulse">
-                        <span className="w-1 h-1 bg-primary rounded-full" />
-                        ACTIVE
-                      </span>
-                    </span>
-                    <span className="text-[0.65rem] text-dim group-hover:text-primary/60 transition-colors">Current Personal Project</span>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-primary mt-1">OPS_02</span>
+        <div className="mt-12 lg:mt-0 lg:absolute lg:right-4 lg:top-[45%] lg:translate-y-[-50%] flex flex-col sm:flex-row lg:flex-col justify-end items-end gap-x-12 gap-y-12 border-r-2 border-primary/20 pr-8 py-6 animate-fade-in [animation-delay:800ms] z-10">
+          <div className="text-right min-w-[240px]">
+            <h3 className="text-[0.7rem] text-primary/40 font-mono tracking-[0.2em] uppercase mb-6 flex items-center justify-end gap-3">
+              Active Operations
+              <span className="w-2 h-2 bg-primary/20 rounded-full" />
+            </h3>
+            <ul className="space-y-6 font-mono text-xs sm:text-sm">
+              <li className="group">
+                <Link to="/projects/tabsense" className="flex flex-col items-end hover:opacity-80 transition-opacity">
+                  <span className="text-primary font-bold flex items-center gap-2">
+                    <span className="px-2 py-0.5 rounded-[2px] bg-primary/10 text-primary text-[0.6rem] animate-pulse">ACTIVE</span>
+                    [TABSENSE] — AI Browser Orchestration
+                    <span className="text-primary/60">OPS_01</span>
+                  </span>
+                  <span className="text-xs text-dim group-hover:text-primary/40 transition-colors">Current Personal Project</span>
+                </Link>
+              </li>
+              <li className="group">
+                <Link to="/projects/agentic-qa" className="flex items-center justify-end gap-4 text-dim/80 group-hover:text-bright transition-colors">
                   <span>[AGENTIC_QA] — Autonomous Execution Platform</span>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-[0.65rem] text-primary/60 font-mono tracking-widest uppercase mb-4">
-                System Stats
-              </h3>
-              <ul className="space-y-3 font-mono text-sm text-dim">
-                <li className="flex justify-between border-b border-border/10 pb-1">
-                  <span>EXPERIENCE</span>
-                  <span className="text-bright">4.5+ YEARS</span>
-                </li>
-                <li className="flex justify-between border-b border-border/10 pb-1">
-                  <span>STATUS</span>
-                  <span className="text-primary">AVAILABLE_FOR_OPS</span>
-                </li>
-                <li className="flex justify-between border-b border-border/10 pb-1">
-                  <span>AUTH</span>
-                  <span className="text-primary">LEVEL_ROOT</span>
-                </li>
-              </ul>
-            </div>
+                  <span className="text-primary font-bold">OPS_02</span>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="text-right min-w-[240px]">
+            <h3 className="text-[0.7rem] text-primary/40 font-mono tracking-[0.2em] uppercase mb-6 flex items-center justify-end gap-3">
+              System Stats
+              <span className="w-2 h-2 bg-primary/20 rounded-full" />
+            </h3>
+            <ul className="space-y-3.5 font-mono text-xs sm:text-sm text-dim">
+              <li className="flex justify-between gap-12 border-b border-border/10 pb-1.5">
+                <span>EXPERIENCE</span>
+                <span className="text-bright font-bold">4.5+ YEARS</span>
+              </li>
+              <li className="flex justify-between gap-12 border-b border-border/10 pb-1.5">
+                <span>STATUS</span>
+                <span className="text-primary font-bold">AVAILABLE_FOR_HIRE</span>
+              </li>
+            </ul>
           </div>
         </div>
 

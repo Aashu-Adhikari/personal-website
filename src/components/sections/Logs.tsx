@@ -2,7 +2,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { TerminalWindow } from "@/components/TerminalWindow";
 import { useInView } from "@/hooks/use-in-view";
 
-export function Logs() {
+export function Blogs() {
   const { ref, inView } = useInView<HTMLDivElement>();
   const placeholders = [
     "building agentic-qa: lessons from playwright at scale",
@@ -12,9 +12,9 @@ export function Logs() {
   return (
     <section className="py-20">
       <div className="container">
-        <SectionHeader id="logs" prompt="tail -f ~/logs/writing.log" title="logs" count="// soon" />
+        <SectionHeader id="blogs" prompt="tail -f ~/blogs/writing.blog" title="blogs" count="// soon" />
         <div ref={ref} className={inView ? "animate-fade-up" : "opacity-0"}>
-          <TerminalWindow title="writing.log — established connection">
+          <TerminalWindow title="writing.blog — established connection">
             <div className="space-y-6">
               <div className="group">
                 <div className="flex items-center gap-2 text-[0.65rem] text-primary/60 font-mono tracking-widest uppercase mb-1">

@@ -3,20 +3,53 @@ import { TerminalWindow } from "@/components/TerminalWindow";
 import { experience } from "@/data/portfolio";
 import { useInView } from "@/hooks/use-in-view";
 import { useState } from "react";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, TerminalSquare, List } from "lucide-react";
+import { ExperienceCLI } from "./ExperienceCLI";
 
 export function Experience() {
+  const [view, setView] = useState<'accordion' | 'cli'>('accordion');
+
   return (
-    <section className="py-20">
+    <section className="py-20 min-h-screen">
       <div className="container">
-        <SectionHeader id="experience" prompt="git log --oneline ~/career" title="experience" />
-        <div className="space-y-4">
-          {experience.map((e, i) => (
-            <ExpItem key={i} e={e} defaultOpen={i === 0} />
-          ))}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+          <SectionHeader id="experience" prompt="git log --oneline ~/career" title="experience" className="mb-0" />
+          
+          <div className="flex items-center gap-1 bg-secondary/30 p-1 rounded-md border border-border/50">
+            <button
+              onClick={() => setView('accordion')}
+              className={`flex items-center gap-2 px-3 py-1.5 text-xs font-mono rounded transition-colors ${
+                view === 'accordion' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-bright'
+              }`}
+            >
+              <List size={14} />
+              List
+            </button>
+            <button
+              onClick={() => setView('cli')}
+              className={`flex items-center gap-2 px-3 py-1.5 text-xs font-mono rounded transition-colors ${
+                view === 'cli' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-bright'
+              }`}
+            >
+              <TerminalSquare size={14} />
+              CLI
+            </button>
+          </div>
         </div>
+        
+        {view === 'accordion' ? <DefaultExperience /> : <ExperienceCLI />}
       </div>
     </section>
+  );
+}
+
+function DefaultExperience() {
+  return (
+    <div className="space-y-4 animate-fade-in">
+      {experience.map((e, i) => (
+        <ExpItem key={i} e={e} defaultOpen={false} />
+      ))}
+    </div>
   );
 }
 

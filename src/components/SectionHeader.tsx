@@ -1,10 +1,10 @@
 import { useInView } from "@/hooks/use-in-view";
 import { DecryptedText } from "./DecryptedText";
 
-export function SectionHeader({ id, prompt, title, count }: { id: string; prompt: string; title: string; count?: string }) {
+export function SectionHeader({ id, prompt, title, count, className }: { id: string; prompt: string; title: string; count?: string; className?: string }) {
   const { ref, inView } = useInView<HTMLDivElement>();
   return (
-    <div id={id} ref={ref} className={`scroll-mt-24 mb-8 ${inView ? "animate-fade-up" : "opacity-0"}`}>
+    <div id={id} ref={ref} className={`scroll-mt-24 mb-8 ${className || ""} ${inView ? "animate-fade-up" : "opacity-0"}`}>
       <div className="flex items-baseline gap-3 flex-wrap">
         <span className="text-primary text-sm">$</span>
         <span className="text-dim text-sm">{prompt}</span>

@@ -41,7 +41,6 @@ export function About() {
               <Row k="LOC" v={profile.location.split(",").pop()?.trim() || "NP"} />
               <Row k="STATUS" v={<span className="text-primary">{profile.status}</span>} />
               <Row k="UPTIME" v="~4Y IN_PROD" />
-              <Row k="SHELL" v="zsh/vim" />
               <Row k="SIGNAL" v={<span className="text-primary">● OK</span>} />
             </dl>
           </TerminalWindow>

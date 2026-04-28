@@ -6,7 +6,7 @@ const items = [
   { label: "~/skills", href: "#skills" },
   { label: "~/experience", href: "#experience" },
   { label: "~/projects", href: "#projects" },
-  { label: "~/logs", href: "#logs" },
+  { label: "~/blogs", href: "#blogs" },
   { label: "~/contact", href: "#contact" },
 ];
 
